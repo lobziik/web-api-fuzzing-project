@@ -49,7 +49,7 @@ class Default(BaseTarget):
         return env
 
     def is_ready(self, line: bytes) -> bool:
-        return b"Reconciling namespace root|default" in line
+        return b"Bootstrapped Namespace root|default" in line
 
     def get_metadata(self) -> Metadata:
         return Metadata(
