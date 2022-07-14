@@ -1,0 +1,24 @@
+name: Schemathesis demo
+
+on:
+  schedule:
+    - cron:  '0 3 * * SUN'
+
+jobs:
+  kcp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - name: Install poetry
+        run: pip install poetry
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+          cache: 'poetry'
+
+      - run: poetry install
+      - run: SCHEMATHESIS_REPORT=1 wafp schemathesis:Fast kubernetes_kcp --output-dir=./artifacts
