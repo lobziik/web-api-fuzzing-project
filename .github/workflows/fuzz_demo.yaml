@@ -3,6 +3,7 @@ name: Schemathesis demo
 on:
   schedule:
     - cron:  '0 3 * * SUN'
+  workflow_dispatch: {}
 
 jobs:
   kcp:
