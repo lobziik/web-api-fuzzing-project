@@ -20,7 +20,7 @@ from wafp.targets import (
 
 KUBECONFIG_FILENAME = "admin.kubeconfig"
 KCP_DATA_PATH = Path(__file__).parent.absolute() / "kcp_data" / ".kcp"
-ROOT_CLUSTER_ADMIN_USERNAME = "shard-admin"
+ROOT_CLUSTER_ADMIN_USERNAME = "admin"
 
 
 @attr.s
