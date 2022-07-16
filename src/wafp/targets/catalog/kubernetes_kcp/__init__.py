@@ -72,8 +72,6 @@ class Default(BaseTarget):
         with open(KCP_DATA_PATH / KUBECONFIG_FILENAME, "r") as fd:
             kubeconfig = fd.read()
         # TODO look up for kubeconfig type
-        print(yaml.safe_load(kubeconfig))
-        self.logger.debug(kubeconfig)
         return self._get_user_token_from_kubeconfig(yaml.safe_load(kubeconfig), ROOT_CLUSTER_ADMIN_USERNAME)
 
     @staticmethod
